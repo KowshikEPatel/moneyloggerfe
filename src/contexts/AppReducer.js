@@ -1,4 +1,5 @@
-export default function appReducer(state,action){
+// eslint-disable-next-line
+export default (state,action)=>{
 switch(action.type){
     case 'DELETE_TRANSACTION':
     return {...state,
@@ -11,7 +12,7 @@ switch(action.type){
     case 'ADD_MULTIPLE_TRASNACTIONS':
         return {
             ...state,
-            transactions:[action.payload,...state.transactions]
+            transactions:[...action.payload,...state.transactions]
         }
    
     default: return state

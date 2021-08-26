@@ -5,6 +5,7 @@ import LandingPage from './components/LandingPage';
 import SecondPage from './components/SecondPage';
 import Summary from './components/Summary'
 import { UserContext } from './contexts/UserContext';
+import { GlobalProvider } from './contexts/TransactionContext';
 import './App.css';
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
 
   return (
     <>
+      <GlobalProvider>
       <UserContext.Provider value={{isLoggedIn,setIsLoggedIn,loggedUser,setLoggedUser,loggedUserUrls,setLoggedUserUrls}}>
       <Navbar bg="primary" variant="dark">
           <Container>
@@ -35,6 +37,7 @@ function App() {
         </Switch>
       </Router>
       </UserContext.Provider>
+      </GlobalProvider>
     </>
   );
 }

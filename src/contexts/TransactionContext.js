@@ -12,21 +12,21 @@ export const GlobalContext = createContext(initialState)
 export const GlobalProvider = ({children})=>{
     
     const [state,dispatch] = useReducer(AppReducer,initialState)
-    const deleteTransaction = (id)=>{
+    function deleteTransaction(id){
         dispatch({
             type:'DELETE_TRANSACTION',
             payload:id
         })
     }
 
-    const addTransaction = (transaction)=>{
+    function addTransaction(transaction){
         dispatch({
             type:'ADD_TRANSACTION',
             payload:transaction
         })
     }
 
-    const addMultipleTransaction = (transactions)=>{
+    function addMultipleTransaction(transactions){
         dispatch({
             type:'ADD_MULTIPLE_TRANSACTION',
             payload:transactions
