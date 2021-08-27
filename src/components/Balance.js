@@ -3,14 +3,15 @@ import { GlobalContext } from '../contexts/TransactionContext'
 
 export default function Balance() {
     const context = useContext(GlobalContext)
-    //const amountsList = context.transactions.map(e=>e.amount)
-    //const total = amountsList.reduce((sum,e)=>sum+e).toFixed(2){total}
-    
+    let total = 0;
+    if(context.transactions.length>0){
+        const amountsList = context.transactions.map(e=>e.amount)
+        total = amountsList.reduce((sum,e)=>sum+e).toFixed(2)
+    }
     return (
         <div>
-            <h6>{JSON.stringify(context)}</h6>
             <h4>Your Balance</h4>
-            <h1 id="balance">INR 400 </h1>
+            <h1 id="balance">INR {total}</h1>
         </div>
     )
 }

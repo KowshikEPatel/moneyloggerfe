@@ -38,7 +38,6 @@ export default function LandingPage() {
             }
         })
         console.log(response)
-
     }
     
     async function handleSubmit(){
@@ -87,11 +86,11 @@ export default function LandingPage() {
                                                     <Form.Label><Card.Title>Username</Card.Title></Form.Label>
                                                     <Form.Control type="text" placeholder="Your Username..." onChange={handleUsername} />
                                                 </Form.Group>
-                                                <Form.Group className="mb-3" controlId="formBasicEmail">
+                                                <Form.Group className="mb-3" controlId="formBasicEmailUserCreate">
                                                     <Form.Label><Card.Title>Email</Card.Title></Form.Label>
                                                     <Form.Control type="email" placeholder="Your Email..." onChange={handleEmail}/>
                                                 </Form.Group>
-                                                <Form.Group className="mb-3" controlId="formBasicPassword">
+                                                <Form.Group className="mb-3" controlId="formBasicPasswordUserCreate">
                                                     <Form.Label><Card.Title>Password</Card.Title></Form.Label>
                                                     <Form.Control type="password" placeholder="Your password..." onChange={handlePassword}/>
                                                 </Form.Group>
